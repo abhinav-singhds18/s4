@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 
 from similarity import sbert_model, cosine, sentences
 
+# from spacy_nlp import displacy_service
+
+
 app = Flask(__name__)
 
 
@@ -45,6 +48,8 @@ def search_request():
     res = {}
     res['total'] = len(most_sim_list_sorted)
     res['hits'] = hits
+
+    # displacy_service(query)
 
     # return render_template('results.html', res=res)
     return render_template('results.html', res=res)
