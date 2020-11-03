@@ -35,12 +35,13 @@
     </div>
 
     <form action="/search" method="post">
-        <div class="input-group">
-            <input type="text" class="form-control input-lg" name="input" placeholder="Search" autofocus>
+       <div class="input-group">
+            <input type="text" class="form-control input-lg" id ="formGroupExampleInput2" name="input" placeholder="Search" autofocus>
             <div class="input-group-btn">
                 <button class="btn btn-outline-secondary" type="submit">
                     <i class="fa fa-search"></i>
                 </button>
+
             </div>
         </div>
     </form>
@@ -66,23 +67,27 @@
         {% endfor %}
     </table>
 
+    <div class="row d-flex justify-content-center">
+        <div id="displacy"></div>
+        </div>
 
- <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center">
 
-      <h3>Knowledge Graph</h3>
+            <h3>Knowledge Graph</h3>
 
-  </div>
+        </div>
 
-    <div class="row">
+        <div class="row">
 
-            <img src={{ url_for('static', filename='images/new_plot.png') }} alt="Chart" width ="600" height="400" class="rounded mx-auto d-block" alt="Responsive image">
+            <img src={{ url_for('static', filename='images/new_plot.png') }} alt="Chart" width="600" height="400"
+                 class="rounded mx-auto d-block" alt="Responsive image">
 
+        </div>
     </div>
-</div>
 
 
+    {#<script src="{{ url_for('static', filename='js/test.js') }}"></script>#}
 <script src="{{ url_for('static', filename='js/test.js') }}"></script>
-
 </body>
 
 </html>

@@ -33,7 +33,7 @@
 
     <form action="/search" method="post">
         <div class="input-group">
-            <input type="text" class="form-control input-lg" name="input" placeholder="Search" autofocus>
+            <input type="text" class="form-control input-lg" id ="formGroupExampleInput2" name="input" placeholder="Search" autofocus>
             <div class="input-group-btn">
                 <button class="btn btn-outline-secondary" type="submit">
                     <i class="fa fa-search"></i>
@@ -46,5 +46,7 @@
     <br><br>
 </div>
 </div>
+<script src="{{ url_for('static', filename='js/test.js') }}"></script>
+
 </body>
 </html>

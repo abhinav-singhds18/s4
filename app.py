@@ -1,6 +1,11 @@
+import requests
 from flask import Flask, render_template, request
-
 from similarity import sbert_model, cosine, sentences
+import spacy
+
+from spacy import displacy
+
+nlp = spacy.load("en_core_web_sm")
 
 # from spacy_nlp import displacy_service
 
@@ -50,9 +55,16 @@ def search_request():
     res['hits'] = hits
 
     # displacy_service(query)
+    # response_data = requests.post(url="http://localhost:5000/visualize/" + query)
 
     # return render_template('results.html', res=res)
     return render_template('results.html', res=res)
+
+
+@app.route('/visualize/<string:text>', methods=["GET", "POST"])
+def displacy_service(text):
+    doc = nlp(text)
+    return displacy.parse_deps(doc)
 
 
 if __name__ == '__main__':
